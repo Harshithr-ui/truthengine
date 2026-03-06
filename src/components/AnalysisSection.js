@@ -145,21 +145,21 @@ const AnalysisSection = () => {
   };
 
   return (
-    <section id="analyze" className="relative flex min-h-screen w-full flex-col py-20 px-4 md:px-10 lg:px-40">
-      <div className="fixed right-[5%] top-[30%] z-0 w-96 h-96 bg-contain bg-no-repeat bg-center opacity-30 transform -rotate-12" data-alt="Astronaut floating in space" style={{backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuCcf0aJWaTVku-qlt4OA9Zv4WRdtjkwIk20COPoOlKn1iEslE5RW1dXf3VJw7T4EAZASI82OLXsFYBNhDCgrRmOV4Aq4a-IPQphHavBDIF_H4bcq3z1rNN4gvCBbKLIDW8UWtp6Q26mpDL1NI1S-qQpLHEjT0ZMp39ViLuvGjBijLIkAHevvs7boXPt2N-HzfYdqgajy4UjSUUP3IgsrsIOLl4WMCpPTqNRO2U5DMxrzDZKeDwMsm2IVSS05Pp7dmYHJ_JV7VpZytZQ")', mixBlendMode: 'overlay'}}></div>
+    <section id="analyze" className="relative flex min-h-screen w-full flex-col py-16 md:py-20 px-4 sm:px-6 md:px-10 lg:px-40">
+      <div className="hidden md:block fixed right-[2%] lg:right-[5%] top-[30%] z-0 w-64 h-64 lg:w-96 lg:h-96 bg-contain bg-no-repeat bg-center opacity-30 transform -rotate-12" data-alt="Astronaut floating in space" style={{backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuCcf0aJWaTVku-qlt4OA9Zv4WRdtjkwIk20COPoOlKn1iEslE5RW1dXf3VJw7T4EAZASI82OLXsFYBNhDCgrRmOV4Aq4a-IPQphHavBDIF_H4bcq3z1rNN4gvCBbKLIDW8UWtp6Q26mpDL1NI1S-qQpLHEjT0ZMp39ViLuvGjBijLIkAHevvs7boXPt2N-HzfYdqgajy4UjSUUP3IgsrsIOLl4WMCpPTqNRO2U5DMxrzDZKeDwMsm2IVSS05Pp7dmYHJ_JV7VpZytZQ")', mixBlendMode: 'overlay'}}></div>
       
       <div className="w-full max-w-[1200px] mx-auto relative z-10">
-        <div className="flex-1 flex flex-col lg:flex-row items-center justify-center gap-12 py-12">
-          <div className="w-full lg:w-1/2 flex flex-col gap-8 items-start z-10">
-            <div className="flex flex-col gap-2 text-left">
-              <h1 className="text-5xl md:text-7xl font-black leading-tight tracking-tighter uppercase drop-shadow-xl text-white">
+        <div className="flex-1 flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 py-8 md:py-12">
+          <div className="w-full lg:w-1/2 flex flex-col gap-8 items-center lg:items-start z-10">
+            <div className="flex flex-col gap-2 text-center lg:text-left">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl font-black leading-tight tracking-tighter uppercase drop-shadow-xl text-white">
                 fact or<br/>fiction?
               </h1>
-              <h2 className="text-lg md:text-xl font-medium leading-normal text-white/90 ml-1 drop-shadow-sm">Enter a news headline to uncover the truth.</h2>
+              <h2 className="text-base sm:text-lg md:text-xl font-medium leading-normal text-white/90 md:ml-1 drop-shadow-sm">Enter a news headline to uncover the truth.</h2>
             </div>
-            <label className="flex flex-col w-full max-w-[600px] mt-4">
+            <label className="flex flex-col w-full max-w-[600px] mt-2 md:mt-4">
               <div className="flex w-full flex-col md:flex-row items-stretch md:items-center rounded-xl md:rounded-full glass-panel p-2 gap-2 shadow-2xl shadow-primary/10 transition-all hover:shadow-primary/20 focus-within:shadow-primary/30 focus-within:border-white/60">
-                <div className="text-white flex items-center justify-center pl-4 pt-3 md:pt-0 drop-shadow-sm">
+                <div className="text-white flex items-center justify-center md:pl-4 pt-3 md:pt-0 drop-shadow-sm">
                   <span className="material-symbols-outlined">search</span>
                 </div>
                 <textarea 
@@ -184,7 +184,7 @@ const AnalysisSection = () => {
           </div>
           
           <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-end justify-center z-10">
-            <div className="analysis-output-card rounded-xl p-6 w-full max-w-[420px] transform transition-all hover:-translate-y-1 shadow-2xl relative overflow-hidden">
+            <div className="analysis-output-card rounded-xl p-5 sm:p-6 w-full max-w-[520px] lg:max-w-[420px] transform transition-all hover:-translate-y-1 shadow-2xl relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-slate-700 via-slate-500 to-transparent"></div>
               
               {showPlaceholder ? (
@@ -194,11 +194,11 @@ const AnalysisSection = () => {
                   <p className="text-base md:text-lg text-slate-800 font-semibold leading-relaxed">
                     {analysisData.query}
                   </p>
-                  <div className="flex items-start justify-between gap-4">
-                    <h3 className={`text-2xl md:text-3xl font-black tracking-wide uppercase ${analysisData.verdictColor} drop-shadow-md`}>
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
+                    <h3 className={`text-xl sm:text-2xl md:text-3xl font-black tracking-wide uppercase break-words ${analysisData.verdictColor} drop-shadow-md`}>
                       {analysisData.verdict}
                     </h3>
-                    <div className="shrink-0 rounded-full bg-white/80 px-4 py-2 border border-slate-400/60 text-lg font-black text-slate-900">
+                    <div className="shrink-0 rounded-full bg-white/80 px-4 py-2 border border-slate-400/60 text-base sm:text-lg font-black text-slate-900">
                       {analysisData.score}
                     </div>
                   </div>
